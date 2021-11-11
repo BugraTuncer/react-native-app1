@@ -1,0 +1,43 @@
+import React from "react";
+import { DetailPage, HomePage } from "./components";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+export default function App() {
+  const Stack = createNativeStackNavigator();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomePage}
+          options={{
+            title: "Home",
+            headerStyle: {
+              backgroundColor: "#6a93a3",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={DetailPage}
+          options={{
+            title: "Detail",
+            headerStyle: {
+              backgroundColor: "#6a93a3",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
