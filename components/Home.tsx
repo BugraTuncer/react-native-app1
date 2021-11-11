@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import { Item } from ".";
-import { UserDto } from "../models";
+import { PhotoDto } from "../models";
 import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
@@ -14,18 +14,6 @@ const styles = StyleSheet.create({
 
 interface RenderItemProps {
   item: PhotoDto;
-}
-
-interface Urls {
-  small: string;
-}
-
-interface PhotoDto {
-  user: UserDto;
-  id: string;
-  urls: Urls;
-  likes: number;
-  alt_description: string;
 }
 
 const Home = () => {

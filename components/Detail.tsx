@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Text, Image, View } from "react-native";
 import { UserDto } from "../models";
 const styles = StyleSheet.create({
   container: {
@@ -35,32 +28,27 @@ const Detail: React.FC<DetailProps> = ({ route }) => {
   const userData: UserDto = user;
 
   //@ts-ignore
-  const Bold = ({ children }) => (
+  const BoldText = ({ children }) => (
     <Text style={{ fontWeight: "bold" }}>{children}</Text>
   );
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image
-        style={styles.item}
-        source={{ uri: photo }}
-        width={150}
-        height={150}
-      />
+      <Image style={styles.item} source={{ uri: photo }} />
       <View style={styles.text}>
         <Text>
           {"\n"}
-          Username: <Bold>{userData.username.toUpperCase()}</Bold>
+          Username: <BoldText>{userData.username.toUpperCase()}</BoldText>
           {"\n"}
         </Text>
         <Text>
           {"\n"}
-          Likes : <Bold>{likes}</Bold>
+          Likes : <BoldText>{likes}</BoldText>
           {"\n"}
         </Text>
         {altDescription && (
           <Text>
-            Description: <Bold>{altDescription}</Bold>
+            Description: <BoldText>{altDescription}</BoldText>
           </Text>
         )}
       </View>
